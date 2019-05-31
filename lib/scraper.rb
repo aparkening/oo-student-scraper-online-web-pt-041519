@@ -51,7 +51,7 @@ class Scraper
       end
     end
 
-    # # Grab twitter url if it exists
+    # # Grab twitter url if it exists, via css attribute
     # twitter = vitals_container.css(".social-icon-container a[href*='twitter.com']").attr("href").value if vitals_container.css(".social-icon-container a[href*='twitter.com']").first 
 
     # Get profile quote and bio if they exist
@@ -59,6 +59,6 @@ class Scraper
     
     profile[:bio] = doc.css("div.profile .details-container p").first.text if profile[:bio] = doc.css("div.profile .details-container p").first
 
-    profile
+    return profile
   end
 end
